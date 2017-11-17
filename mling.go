@@ -1,7 +1,6 @@
 package mling
 
 import (
-	"fmt"
 	"github.com/liuzl/go-porterstemmer"
 	"github.com/liuzl/segment"
 	"golang.org/x/text/transform"
