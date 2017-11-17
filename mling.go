@@ -44,7 +44,6 @@ func (t *MlingTokenizer) Tokenize(text string) []string {
 		if t.rmPunct {
 			r := []rune(term)
 			if len(r) == 1 && unicode.IsPunct(r[0]) {
-				fmt.Println(term)
 				continue
 			}
 		}
