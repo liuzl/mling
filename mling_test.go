@@ -16,10 +16,16 @@ func TestSegment(t *testing.T) {
 		"Официальный сайт Московского государственного университета имени М.В.Ломоносова (МГУ)",
 		"ทันทุกเหตุการณ์ข่าววันนี้ข่าวล่าสุดตรวจหวยดวงข่าวบันเทิงคอลัมน์ดังเรื่องย่อ",
 		"Swedish photograper Per-Anders Jörgensen and Art Director Lotta Jörgensen are the duo behind one of the most interesting Food Magazines in the world.",
+		"zhanliangliu@gmail.com,zliu.org",
 	}
 
+	tok := DefaultMlingTokenizer()
 	for _, c := range cases {
-		ret := Segment(c)
-		t.Log(ret)
+		ret := tok.Tokenize(c)
+		t.Log(c)
+		for _, s := range ret {
+			t.Logf("%s/%d", s, len([]rune(s)))
+		}
+		t.Log()
 	}
 }
