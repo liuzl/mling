@@ -60,6 +60,9 @@ func (t *MlingTokenizer) Tokenize(text string) []string {
 		if t.doStem {
 			term = porterstemmer.StemString(term)
 		}
+		if term == "" {
+			continue
+		}
 		ret = append(ret, term)
 	}
 	return ret
